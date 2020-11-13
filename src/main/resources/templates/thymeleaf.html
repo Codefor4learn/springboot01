@@ -1,0 +1,19 @@
+﻿<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Home</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+	<div th:text="${hello}">hello</div>
+	<div th:utext="${hello}">hello</div> <!-- 不转义 当作标签的本义 显示大标题-->
+	<hr/>
+
+	<!-- th:each 每次都会生成该标签 -->
+	<h4 th:text="${user}" th:each="user : ${users}"></h4>
+	<hr/>
+
+	<h4>
+		<span th:each="user : ${users}">[[${user}}]]</span>
+	</h4>
+</body>
+</html>
